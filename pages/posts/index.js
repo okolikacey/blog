@@ -1,3 +1,4 @@
+import Head from "next/head";
 import AllPost from "../../components/posts/all-post";
 import { getAllPosts } from "../../lib/posts-utils";
 
@@ -33,7 +34,15 @@ import { getAllPosts } from "../../lib/posts-utils";
 // ];
 
 function AllPosts(props) {
-  return <AllPost posts={props.posts} />;
+  return (
+    <>
+      <Head>
+        <title>All Posts</title>
+        <meta name="description" content="A list of all tutorials" />
+      </Head>
+      <AllPost posts={props.posts} />
+    </>
+  );
 }
 
 export default AllPosts;
